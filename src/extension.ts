@@ -13,10 +13,10 @@ let addTerminalStatusBarItem: vscode.StatusBarItem;
 export function activate(context: vscode.ExtensionContext) {
 	addTerminalStatusBarItem = vscode.window.createStatusBarItem();
 	addTerminalStatusBarItem.text = '$(plus) Add terminal';
-	addTerminalStatusBarItem.command = 'terminalus.addTerminal';
+	addTerminalStatusBarItem.command = 'terminalis.addTerminal';
 	addTerminalStatusBarItem.show();
 
-	let disposable = vscode.commands.registerCommand('terminalus.addTerminal', async () => {
+	let disposable = vscode.commands.registerCommand('terminalis.addTerminal', async () => {
 		if (Terminals.length < MaxTerminals) {
 			const name = await vscode.window.showInputBox({ placeHolder: 'Enter the name of your terminal. E.g. docker' });
 			const terminal = vscode.window.createTerminal(name);
@@ -26,7 +26,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 	context.subscriptions.push(disposable);
 	for (let i = 0; i < MaxTerminals; i++) {
-		disposable = vscode.commands.registerCommand(`terminalus.showTerminal${i}`, () => {
+		disposable = vscode.commands.registerCommand(`terminalis.showTerminal${i}`, () => {
 			Terminals[i].terminal.show();
 		});
 		context.subscriptions.push(disposable);
@@ -56,7 +56,7 @@ function addTerminal(terminal: vscode.Terminal) {
 	const name = terminal.name;
 	const statusBarItem = vscode.window.createStatusBarItem();
 	statusBarItem.text = `$(terminal) ${name}`;
-	statusBarItem.command = `terminalus.showTerminal${Terminals.length}`;
+	statusBarItem.command = `terminalis.showTerminal${Terminals.length}`;
 	statusBarItem.show();
 	Terminals.push({ terminal, statusBarItem, name });
 }
@@ -64,7 +64,7 @@ function addTerminal(terminal: vscode.Terminal) {
 function updateStatusBarItemCommands() {
 	for (let i = 0; i < Terminals.length; i++) {
 		const terminal = Terminals[i];
-		terminal.statusBarItem.command = `terminalus.showTerminal${i}`;
+		terminal.statusBarItem.command = `terminalis.showTerminal${i}`;
 	}
 }
 

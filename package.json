@@ -16,7 +16,7 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "terminalus.addTerminal",
+				"command": "terminalis.addTerminal",
 				"title": "Add Terminal"
 			}
 		]
