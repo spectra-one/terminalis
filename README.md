@@ -11,4 +11,4 @@ On activation of the extension, you will see an `Add Terminal` button in the sta
 Opening a terminal the default way will also add the new terminal to the status bar. Up to 5 terminals will be added to avoid cluttering the status bar.
 
 You can also use the command:
-> Add Terminal
+> > Add Terminal
