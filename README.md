@@ -1,4 +1,4 @@
-# Terminalus
+# Terminalis
 
 This VS Code extension is to make switching from one terminal to another a breeze.
 
