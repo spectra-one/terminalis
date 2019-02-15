@@ -2,7 +2,7 @@
 	"name": "terminalis",
 	"displayName": "terminalis",
 	"description": "Switch tabs quickly and easily from the status bar.",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"engines": {
 		"vscode": "^1.31.0"
 	},
