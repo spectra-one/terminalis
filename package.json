@@ -39,5 +39,6 @@
 	"repository": {
 		"url": "https://github.com/spectra-one/terminalis",
 		"type": "github"
-	}
+	},
+	"icon": "terminalis-logo.png"
 }
