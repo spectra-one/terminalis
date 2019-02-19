@@ -20,6 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
 		if (Terminals.length < MaxTerminals) {
 			const name = await vscode.window.showInputBox({ placeHolder: 'Enter the name of your terminal. E.g. docker' });
 			const terminal = vscode.window.createTerminal(name);
+			terminal.show();
 		} else {
 			vscode.window.showInformationMessage('You can only add 5 terminals to the status bar.');
 		}
